@@ -1,10 +1,9 @@
-"use client";
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ChakraProvider } from "@chakra-ui/react";
-import { CacheProvider } from "@chakra-ui/next-js";
 import Navbar from "../../components/Navbar";
+import { CacheProvider } from "../../components/chakra-next-components";
+import { Box, ChakraProvider } from "../../components/chakra-client-components";
+import "./page.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +23,7 @@ export default function RootLayout({
         <CacheProvider>
           <ChakraProvider>
             <Navbar />
-            {children}
+            <Box bg="#232323">{children}</Box>
           </ChakraProvider>
         </CacheProvider>
       </body>
